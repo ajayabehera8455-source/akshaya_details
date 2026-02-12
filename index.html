@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Akshaya Kumar Behera - Portfolio</title>
+
+    <style>
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: linear-gradient(-45deg,#ff6a00,#ee0979,#00c6ff,#0072ff);
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
+    color:#fff;
+}
+
+header {
+    text-align:center;
+    padding:50px 20px;
+    animation: fadeInDown 1s ease;
+}
+
+header h1 {
+    font-size:42px;
+    letter-spacing:1px;
+}
+
+.cards {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    gap:25px;
+    padding:40px;
+    max-width:1100px;
+    margin:auto;
+}
+
+.card {
+    background: rgba(255,255,255,0.15);
+    padding:35px 20px;
+    border-radius:18px;
+    text-align:center;
+    cursor:pointer;
+    font-size:18px;
+    font-weight:600;
+    transition:0.4s;
+    backdrop-filter: blur(10px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.card:hover {
+    transform: translateY(-12px) scale(1.07);
+    background: rgba(255,255,255,0.25);
+}
+
+.details {
+    display:none;
+    background: linear-gradient(135deg,#ffffff,#f1f5f9);
+    color:#222;
+    padding:35px;
+    margin:25px auto;
+    border-radius:15px;
+    max-width:900px;
+    animation: fadeIn 0.7s ease;
+    box-shadow:0 10px 30px rgba(0,0,0,0.25);
+}
+
+.details h2 {
+    margin-bottom:15px;
+    color:#0072ff;
+}
+
+.details ul {
+    margin-left:20px;
+    line-height:1.7;
+}
+
+footer {
+    text-align:center;
+    padding:25px;
+    opacity:0.9;
+    font-size:14px;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeIn {
+    from { opacity:0; transform:translateY(20px);} 
+    to { opacity:1; transform:translateY(0);} 
+}
+
+@keyframes fadeInDown {
+    from { opacity:0; transform:translateY(-30px);} 
+    to { opacity:1; transform:translateY(0);} 
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Akshaya Kumar Behera</h1>
+    <p>Click any section to view details</p>
+</header>
+
+<section class="cards">
+    <div class="card" onclick="showSection('about')">About Me</div>
+    <div class="card" onclick="showSection('experience')">Resume / Experience</div>
+    <div class="card" onclick="showSection('skills')">Skills</div>
+    <div class="card" onclick="showSection('certifications')">Certifications</div>
+    <div class="card" onclick="showSection('contact')">Contact</div>
+</section>
+
+<div id="about" class="details">
+    <h2>About Me</h2>
+    <p>MBA student in Marketing & IT with hands-on experience as a Business Development Coordinator. Skilled in sales, coordination, and customer engagement.</p>
+</div>
+
+<div id="experience" class="details">
+    <h2>Experience</h2>
+    <h3>Business Development Coordinator – Muthoot Mercantile Ltd.</h3>
+    <p>June 2025 – Present</p>
+    <ul>
+        <li>Coordinating with branches to achieve targets</li>
+        <li>Monitoring performance and reports</li>
+        <li>Supporting marketing initiatives</li>
+    </ul>
+
+    <h3>Customer Relationship Executive – Max Fashion</h3>
+    <p>May 2024 – July 2024</p>
+    <ul>
+        <li>Assisted customers and resolved queries</li>
+        <li>Supported sales promotions</li>
+    </ul>
+</div>
+
+<div id="skills" class="details">
+    <h2>Skills</h2>
+    <ul>
+        <li>Sales & Marketing</li>
+        <li>Business Development</li>
+        <li>Customer Relationship Management</li>
+        <li>MS Office (Word, Excel, PowerPoint)</li>
+        <li>Leadership</li>
+        <li>Growth Planning & Business Strategies</li>
+        <li>Communication Skills</li>
+        <li>Market Research & Competitor Analysis</li>
+    </ul>
+</div>
+
+<div id="certifications" class="details">
+    <h2>Certifications</h2>
+    <ul>
+        <li>Microsoft Advance Excel Certification – IIG Varsity</li>
+        <li>Business Analysis Certification – Microsoft & LinkedIn</li>
+        <li>Skill Building Certification (Sales & Marketing) – Hindustan Coca‑Cola Beverages Pvt. Ltd.</li>
+        <li>Completion of Banking, Finance & Insurance Certification – Bajaj Finserv</li>
+    </ul>
+</div>
+
+<div id="contact" class="details">
+    <h2>Contact</h2>
+    <p>Phone: +91 8455092030</p>
+    <p>Email: akshayabehera7721@gmail.com</p>
+    <p>Address: Haripur, Khaira, Balasore, Odisha</p>
+</div>
+
+<footer>
+    <p>© 2026 Akshaya Kumar Behera</p>
+</footer>
+
+<script>
+function showSection(id) {
+    let sections = document.querySelectorAll('.details');
+    sections.forEach(section => section.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+    window.scrollTo({ top: document.getElementById(id).offsetTop - 20, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
